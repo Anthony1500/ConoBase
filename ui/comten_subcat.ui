@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>401</width>
+    <height>401</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>50</y>
+     <width>81</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: white;
+    font-size: 12px; /* Tamaño del texto */
+    padding: 9px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string>Categoría:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>130</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: white;
+    font-size: 15px; /* Tamaño del texto */
+    padding: 9px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string>Descripción:</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="inputtext_create_cat_3">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>170</y>
+     <width>301</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit {
+    font-size: 13pt;
+   
+}
+
+QTextEdit:hover {
+    border: 1px solid blue;
+    border-radius: 9px;
+}
+
+QTextEdit {
+                border-radius: 10px;
+                background-clip: border;
+                background-color: rgb(220, 220,220);
+                color: rgb(0, 0, 0);
+                font: 12pt Vazir;
+                border:0.5px solid;
+                border-color: rgb(220, 220,220);
+                font-family: Swiss;
+                font-size: 12pt;
+            }
+
+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="guardar">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>330</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #55d940;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+}
+QPushButton:pressed {
+    background-color: #ffffff;
+    color: black;
+}
+QPushButton:hover {
+   border: 1px solid blue;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>50</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: white;
+    font-size: 15px; /* Tamaño del texto */
+    padding: 9px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string>Tema:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancelar">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>330</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #d94040;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+}
+QPushButton:pressed {
+    background-color: #ffffff;
+    color: black;
+}
+QPushButton:hover {
+   border: 1px solid blue;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>0</y>
+     <width>321</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: white;
+    font-size: 20px; /* Tamaño del texto */
+    padding: 9px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string>Ingresa contenido a la categoría :</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>401</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../images/background_collection_1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="inputtext_create_cat_2">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>90</y>
+     <width>301</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit {
+    font-size: 14pt;
+    font-family: Helvetica;
+}
+
+QTextEdit:hover {
+    border: 1px solid blue;
+    border-radius: 9px;
+}
+
+QTextEdit {
+                border-radius: 10px;
+                background-clip: border;
+                background-color: rgb(220, 220,220);
+                color: rgb(0, 0, 0);
+                font: 13pt Vazir;
+                border:0.5px solid;
+                border-color: rgb(220, 220,220);
+                font-family: Helvetica;
+                font-size: 14pt;
+            }
+
+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="data_category">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>50</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: white;
+    font-size: 11px; /* Tamaño del texto */
+    font-weight: bold;
+   
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>361</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background: #ffffff;
+    
+    font-size: 20px; /* Tamaño del texto */
+    padding: 9px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../images/background_collection_2.png</pixmap>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>data_category</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label_8</zorder>
+  <zorder>inputtext_create_cat_3</zorder>
+  <zorder>guardar</zorder>
+  <zorder>label_7</zorder>
+  <zorder>cancelar</zorder>
+  <zorder>label_6</zorder>
+  <zorder>inputtext_create_cat_2</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

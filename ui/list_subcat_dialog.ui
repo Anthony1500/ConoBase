@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>431</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>481</width>
+     <height>481</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>5</width>
+     <height>5</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../images/background_collection_3.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textname_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   color: black;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px;
+     border: 0px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Título :</string>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textname_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: black;
+    font-size: 12px; /* Tamaño del texto */
+    padding: 3px; /* Espaciado interno */
+    font-weight: bold;
+     border: 0px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Categoría :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cat_name">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>10</y>
+     <width>311</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: black;
+    font-size: 12px; /* Tamaño del texto */
+    padding: 3px; /* Espaciado interno */
+    text-transform: uppercase;
+     border: 0px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="text_title_sub">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>60</y>
+     <width>341</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: black;
+    font-size: 12px; /* Tamaño del texto */
+    padding: 3px; /* Espaciado interno */
+     border: 0px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textname_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   color: black;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px;
+    border: 0px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Fecha y Hora : </string>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="text_date_hour">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>80</y>
+     <width>171</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: black;
+    font-size: 12px; /* Tamaño del texto */
+    padding: 3px; /* Espaciado interno */
+     border: 0px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textname_7">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   color: black;
+    font-size: 13px;
+    font-weight: bold;
+     border: 0px;
+}</string>
+   </property>
+   <property name="text">
+    <string> Contenido :</string>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="text_contem">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>431</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit {
+    font-size: 13pt;
+   
+}
+
+QTextEdit:hover {
+    border: 1px solid blue;
+    border-radius: 9px;
+}
+
+QTextEdit {
+                border-radius: 10px;
+                background-clip: border;
+                background-color: rgb(220, 220,220);
+                color: rgb(0, 0, 0);
+                font: 12pt Vazir;
+                border:0.5px solid;
+                border-color: rgb(220, 220,220);
+                font-family: Swiss;
+                font-size: 12pt;
+            }
+</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back">
+   <property name="geometry">
+    <rect>
+     <x>405</x>
+     <y>5</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #d94040;
+    border-radius: 10px;
+    border: 0px;
+    color: white;
+    font-size: 19px; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+}
+QPushButton:pressed {
+    background-color: #ffffff;
+    color: black;
+}
+QPushButton:hover {
+   border: 1px solid blue;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>X</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

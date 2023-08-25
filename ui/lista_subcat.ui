@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>399</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QListView" name="lista_subcat">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>361</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListView::item {
+    /* No funcionará sin establecer los bordes */
+    border: 0px;
+    margin-left: 10px; /* Ajusta este valor para el margen deseado */
+}</string>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::DoubleClicked</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="textElideMode">
+    <enum>Qt::ElideRight</enum>
+   </property>
+   <property name="modelColumn">
+    <number>0</number>
+   </property>
+   <property name="uniformItemSizes">
+    <bool>false</bool>
+   </property>
+   <property name="selectionRectVisible">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>41</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+   
+    border-radius: 10px;
+    color: white;
+    font-size: 20px; /* Tamaño del texto */
+    padding: 9px; /* Espaciado interno */
+}
+QPushButton:pressed {
+    background-color: #ffffff;
+    color: black;
+}
+QPushButton:hover {
+   border: 1px solid blue;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/back.png</normaloff>../images/back.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buscar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>298</x>
+     <y>72</y>
+     <width>41</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+   
+    font-size: 14pt; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+}
+
+QPushButton {
+                border-radius: 10px;
+                background-clip: border;
+                background-color: rgb(220, 220,220);
+                color: rgb(0, 0, 0);
+                font: 13pt Vazir;
+                border:0.5px solid;
+                border-color: rgb(220, 220,220);
+                font-family: Helvetica;
+                font-size: 14pt;
+            }</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/search.png</normaloff>../images/search.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textname_1">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>20</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    
+    color: white;
+    font-size: 21px; /* Tamaño del texto */
+    padding: 9px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string>Lista subcategorías:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>401</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../images/background_2.png</pixmap>
+   </property>
+  </widget>
+  <widget class="MyTextEdit" name="inputtext_search_subcat">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>70</y>
+     <width>271</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit {
+    font-size: 14pt;
+    font-family: Helvetica;
+}
+
+QTextEdit:hover {
+    border: 1px solid blue;
+    border-radius: 9px;
+    margin-bottom: 0px;
+}
+
+QTextEdit {
+                border-radius: 10px;
+                background-clip: border;
+                background-color: rgb(220, 220,220);
+                color: rgb(0, 0, 0);
+                font: 13pt Vazir;
+                border:0.5px solid;
+                border-color: rgb(220, 220,220);
+                font-family: Helvetica;
+                font-size: 14pt;
+            }
+
+</string>
+   </property>
+   <property name="acceptRichText">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textname_2">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>0</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: #6527BE;
+    color: white;
+    font-size: 12px; /* Tamaño del texto */
+    padding: 2px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string>Categoría:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="subcat_cat_text">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>0</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+   
+    color: white;
+    font-size: 12px; /* Tamaño del texto */
+    padding: 3px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+
+    border-radius: 20px;
+    border: 0px;
+    color: white;
+    font-size: 19px; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+    
+}
+QPushButton:pressed {
+    background-color: #9681EB;
+    color: black;
+}
+QPushButton:hover {
+   border: 1px solid blue;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/addmore.png</normaloff>../images/addmore.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>lista_subcat</zorder>
+  <zorder>back</zorder>
+  <zorder>textname_1</zorder>
+  <zorder>inputtext_search_subcat</zorder>
+  <zorder>buscar</zorder>
+  <zorder>textname_2</zorder>
+  <zorder>subcat_cat_text</zorder>
+  <zorder>back_2</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>main</header>
+   <slots>
+    <slot>setupUi()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

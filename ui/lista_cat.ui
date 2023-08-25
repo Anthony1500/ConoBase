@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>401</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../images/background_2.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QListView" name="lista_cat">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>361</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListView::item {
+    /* No funcionará sin establecer los bordes */
+    border: 0px;
+    margin-left: 10px; /* Ajusta este valor para el margen deseado */
+}</string>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::DoubleClicked</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="textElideMode">
+    <enum>Qt::ElideRight</enum>
+   </property>
+   <property name="modelColumn">
+    <number>0</number>
+   </property>
+   <property name="uniformItemSizes">
+    <bool>false</bool>
+   </property>
+   <property name="selectionRectVisible">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textname_1">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>191</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: #6527BE;
+    color: white;
+    font-size: 20px; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string>Lista categorías: </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>360</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #d94040;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+}
+QPushButton:pressed {
+    background-color: #ffffff;
+    color: black;
+}
+QPushButton:hover {
+   border: 1px solid blue;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+  </widget>
+  <widget class="MyTextEdit" name="inputtext_search_cat">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>40</y>
+     <width>271</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit {
+    font-size: 14pt;
+    font-family: Helvetica;
+}
+
+QTextEdit:hover {
+    border: 1px solid blue;
+    border-radius: 9px;
+    margin-bottom: 0px;
+}
+
+QTextEdit {
+                border-radius: 10px;
+                background-clip: border;
+                background-color: rgb(220, 220,220);
+                color: rgb(0, 0, 0);
+                font: 13pt Vazir;
+                border:0.5px solid;
+                border-color: rgb(220, 220,220);
+                font-family: Helvetica;
+                font-size: 14pt;
+            }
+
+</string>
+   </property>
+   <property name="acceptRichText">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buscar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>298</x>
+     <y>42</y>
+     <width>41</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+   
+    font-size: 14pt; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+}
+
+QPushButton {
+                border-radius: 10px;
+                background-clip: border;
+                background-color: rgb(220, 220,220);
+                color: rgb(0, 0, 0);
+                font: 13pt Vazir;
+                border:0.5px solid;
+                border-color: rgb(220, 220,220);
+                font-family: Helvetica;
+                font-size: 14pt;
+            }</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/search.png</normaloff>../images/search.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>main</header>
+   <slots>
+    <slot>setupUi()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
