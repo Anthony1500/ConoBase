@@ -16,48 +16,96 @@ class MainWindow(QtWidgets.QDialog):
         loadUi("ui/select_cat.ui", self)         
        
         # Conectar la señal clicked del botón a un método, myButton es la variable asociada al botón
-        self.myButton.clicked.connect(self.button_clicked)
-
-        self.animation = QtCore.QPropertyAnimation(self.myButton, b"geometry")
-        self.animation.setDuration(500)
-        self.animation.setStartValue(self.myButton.geometry())
-        endValue = self.myButton.geometry()
-        endValue.setHeight(endValue.height() - 5)
-        endValue.setWidth(endValue.width() - 5)
-        self.animation.setEndValue(endValue)
-        self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuad)
-        self.animation.finished.connect(self.stop_animation)
+        self.myButton.clicked.connect(self.button_clicked_create_cat)
+        self.search_cat.clicked.connect(self.button_clicked_search_cat)
+      
         
         
-    def button_clicked(self):
-        # Iniciar la animación
-        self.animation.start()
+    def button_clicked_create_cat(self):
         # Manejar el evento de clic del botón
         #print("Botón presionado")
         self.stacked_widget.setCurrentIndex(1)  # Cambiar a la página 1 del QStackedWidget
 
-        
-
-    def stop_animation(self):
-        # Detener la animación y volver a la posición original
-        self.animation.stop()
-        self.myButton.setGeometry(self.animation.startValue())
+    def button_clicked_search_cat(self):
+        # Manejar el evento de clic del botón
+        #print("Botón presionado")
+        self.stacked_widget.setCurrentIndex(2)  # Cambiar a la página 2 del QStackedWidget
+          
 
     
 class CreateCat(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
-        uic.loadUi('ui/create_cat.ui', self)
-        self.setWindowTitle("ConoBase")
-        self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.CustomizeWindowHint | QtCore.Qt.WindowMinimizeButtonHint | QtCore.Qt.WindowCloseButtonHint)
-        #self.setGeometry(0, 0, 400, 400)
-        self.setFixedSize(400, 400)
-        # Ruta al archivo de icono
-        icon_path = "images/logo_app.png"
-        self.setWindowIcon(QtGui.QIcon(icon_path))
+        loadUi('ui/create_cat.ui', self)
+        
         # Conectar la señal clicked del botón a un método, myButton es la variable asociada al botón
+        self.guardar.clicked.connect(self.clicked_button_guardar)
         self.cancelar.clicked.connect(self.button_clicked)
+        self.borrar.clicked.connect(self.clicked_button_borrar)
 
+        #animacion
+        self.animation = QtCore.QPropertyAnimation(self.borrar, b"geometry")
+        self.animation.setDuration(500)
+        self.animation.setStartValue(self.borrar.geometry())
+        endValue = self.borrar.geometry()
+        endValue.setHeight(endValue.height() - 2)
+        endValue.setWidth(endValue.width() - 2)
+        self.animation.setEndValue(endValue)
+        self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuad)
+        self.animation.finished.connect(self.stop_animation)
+
+    def clicked_button_guardar(self):
+        #obtener y guardar datos
+        text = self.inputtext_create_cat.toPlainText()
+        
+        # Abre el archivo en modo escritura
+        with open("resources/"+text+".txt", "w") as archivo:
+        # Escribe el texto en el archivo
+            archivo.write(text)
+
+       
+    def clicked_button_borrar(self):
+        
+        self.inputtext_create_cat.clear()        
+        # Iniciar la animación
+        self.animation.start()
+        
+    def stop_animation(self):
+        # Detener la animación y volver a la posición original
+        self.animation.stop()
+        self.borrar.setGeometry(self.animation.startValue())
+
+    def button_clicked(self):        
+        # Manejar el evento de clic del botón
+        #print("Botón presionado")
+        self.stacked_widget.setCurrentIndex(0)  # Cambiar a la página 0 del QStackedWidget
+
+class ListCat(QtWidgets.QDialog):
+    def __init__(self):
+        super().__init__()
+        loadUi('ui/lista_cat.ui', self)
+        
+        # Conectar la señal clicked del botón a un método, myButton es la variable asociada al botón
+        self.back.clicked.connect(self.button_clicked)
+        
+
+        #animacion
+        self.animation = QtCore.QPropertyAnimation(self.back, b"geometry")
+        self.animation.setDuration(500)
+        self.animation.setStartValue(self.back.geometry())
+        endValue = self.back.geometry()
+        endValue.setHeight(endValue.height() - 2)
+        endValue.setWidth(endValue.width() - 2)
+        self.animation.setEndValue(endValue)
+        self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuad)
+        self.animation.finished.connect(self.stop_animation)
+
+           
+        
+    def stop_animation(self):
+        # Detener la animación y volver a la posición original
+        self.animation.stop()
+        self.borrar.setGeometry(self.animation.startValue())
 
     def button_clicked(self):        
         # Manejar el evento de clic del botón
@@ -71,12 +119,16 @@ if __name__ == "__main__":
 
     main_window = MainWindow()
     create_cat_window = CreateCat()
+    search_cat_window = ListCat()
 
     stacked_widget.addWidget(main_window)
     stacked_widget.addWidget(create_cat_window)
+    stacked_widget.addWidget(search_cat_window)
 
     main_window.stacked_widget = stacked_widget
     create_cat_window.stacked_widget = stacked_widget
+    search_cat_window.stacked_widget = stacked_widget
+
 
     stacked_widget.setCurrentIndex(0)  # Mostrar la página 0 inicialmente
 

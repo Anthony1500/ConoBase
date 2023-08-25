@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>399</width>
     <height>400</height>
    </rect>
   </property>
@@ -39,7 +39,7 @@
     <rect>
      <x>30</x>
      <y>160</y>
-     <width>341</width>
+     <width>321</width>
      <height>41</height>
     </rect>
    </property>
@@ -50,9 +50,11 @@
 QTextEdit {
     font-size: 14pt;
     font-family: Helvetica;
+
 }
-
-
+QTextEdit {
+      
+}
 </string>
    </property>
   </widget>
@@ -61,7 +63,7 @@ QTextEdit {
     <rect>
      <x>210</x>
      <y>210</y>
-     <width>161</width>
+     <width>141</width>
      <height>31</height>
     </rect>
    </property>
@@ -82,7 +84,8 @@ QTextEdit {
     padding: 8px; /* Espaciado interno */
 }
 QPushButton:pressed {
-    background-color: #A7EDE7;
+    background-color: #ffffff;
+    color: black;
 }
 QPushButton:hover {
    border: 1px solid blue;
@@ -112,9 +115,9 @@ QPushButton:hover {
   <widget class="QPushButton" name="cancelar">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>50</x>
      <y>210</y>
-     <width>161</width>
+     <width>141</width>
      <height>31</height>
     </rect>
    </property>
@@ -135,7 +138,8 @@ QPushButton:hover {
     padding: 8px; /* Espaciado interno */
 }
 QPushButton:pressed {
-    background-color: #A7EDE7;
+    background-color: #ffffff;
+    color: black;
 }
 QPushButton:hover {
    border: 1px solid blue;
@@ -167,12 +171,43 @@ QPushButton:hover {
     <string>de la categoría :</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="borrar">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>160</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+   
+    font-size: 14pt; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/borrar.png</normaloff>../images/borrar.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>cancelar</zorder>
   <zorder>textname_2</zorder>
   <zorder>textname_1</zorder>
   <zorder>inputtext_create_cat</zorder>
   <zorder>guardar</zorder>
+  <zorder>borrar</zorder>
  </widget>
  <resources/>
  <connections/>

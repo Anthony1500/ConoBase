@@ -27,7 +27,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2"/>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="search_cat">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -53,7 +53,8 @@
     padding: 8px; /* Espaciado interno */
 }
 QPushButton:pressed {
-    background-color: #A7EDE7;
+    background-color: #ffffff;
+    color: black;
 }
 QPushButton:hover {
    border: 1px solid blue;
@@ -90,7 +91,8 @@ QPushButton:hover {
     padding: 8px; /* Espaciado interno */
 }
 QPushButton:pressed {
-    background-color: #A7EDE7;
+    background-color: #ffffff;
+    color: black;
 }
 QPushButton:hover {
    border: 1px solid blue;
@@ -205,7 +207,8 @@ QPushButton:hover {
     padding: 8px; /* Espaciado interno */
 }
 QPushButton:pressed {
-    background-color: #A7EDE7;
+    background-color: #ffffff;
+    color: black;
 }
 QPushButton:hover {
    border: 1px solid blue;
@@ -347,7 +350,7 @@ color: white
   <zorder>label</zorder>
   <zorder>verticalLayoutWidget_2</zorder>
   <zorder>verticalLayoutWidget_3</zorder>
-  <zorder>pushButton_2</zorder>
+  <zorder>search_cat</zorder>
   <zorder>myButton</zorder>
   <zorder>label_4</zorder>
   <zorder>label_6</zorder>

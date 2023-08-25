@@ -25,13 +25,13 @@ class Ui_Dialog(object):
         self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_2 = QPushButton(Dialog)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(90, 160, 241, 51))
+        self.search_cat = QPushButton(Dialog)
+        self.search_cat.setObjectName(u"search_cat")
+        self.search_cat.setGeometry(QRect(90, 160, 241, 51))
         font = QFont()
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setMouseTracking(True)
-        self.pushButton_2.setStyleSheet(u"QPushButton {\n"
+        self.search_cat.setFont(font)
+        self.search_cat.setMouseTracking(True)
+        self.search_cat.setStyleSheet(u"QPushButton {\n"
 "    background-color: #b127be;\n"
 "    border-radius: 10px;\n"
 "    color: white;\n"
@@ -39,7 +39,8 @@ class Ui_Dialog(object):
 "    padding: 8px; /* Espaciado interno */\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-color: #A7EDE7;\n"
+"    background-color: #ffffff;\n"
+"    color: black;\n"
 "}\n"
 "QPushButton:hover {\n"
 "   border: 1px solid blue;\n"
@@ -58,7 +59,8 @@ class Ui_Dialog(object):
 "    padding: 8px; /* Espaciado interno */\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-color: #A7EDE7;\n"
+"    background-color: #ffffff;\n"
+"    color: black;\n"
 "}\n"
 "QPushButton:hover {\n"
 "   border: 1px solid blue;\n"
@@ -107,7 +109,8 @@ class Ui_Dialog(object):
 "    padding: 8px; /* Espaciado interno */\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-color: #A7EDE7;\n"
+"    background-color: #ffffff;\n"
+"    color: black;\n"
 "}\n"
 "QPushButton:hover {\n"
 "   border: 1px solid blue;\n"
@@ -159,7 +162,7 @@ class Ui_Dialog(object):
         self.label.raise_()
         self.verticalLayoutWidget_2.raise_()
         self.verticalLayoutWidget_3.raise_()
-        self.pushButton_2.raise_()
+        self.search_cat.raise_()
         self.myButton.raise_()
         self.label_4.raise_()
         self.label_6.raise_()
@@ -177,7 +180,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"Buscar categor\u00eda", None))
+        self.search_cat.setText(QCoreApplication.translate("Dialog", u"Buscar categor\u00eda", None))
         self.myButton.setText(QCoreApplication.translate("Dialog", u"Crear nueva categor\u00eda", None))
         self.label_4.setText(QCoreApplication.translate("Dialog", u"------------------------------------------", None))
         self.label.setText("")

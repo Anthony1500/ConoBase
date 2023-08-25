@@ -17,7 +17,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(400, 400)
+        Dialog.resize(399, 400)
         self.textname_1 = QLabel(Dialog)
         self.textname_1.setObjectName(u"textname_1")
         self.textname_1.setGeometry(QRect(0, 0, 191, 51))
@@ -29,20 +29,22 @@ class Ui_Dialog(object):
 "}")
         self.inputtext_create_cat = QTextEdit(Dialog)
         self.inputtext_create_cat.setObjectName(u"inputtext_create_cat")
-        self.inputtext_create_cat.setGeometry(QRect(30, 160, 341, 41))
+        self.inputtext_create_cat.setGeometry(QRect(30, 160, 321, 41))
         self.inputtext_create_cat.setStyleSheet(u"QTextEdit:hover {\n"
 "    border: 2px solid blue;\n"
 "}\n"
 "QTextEdit {\n"
 "    font-size: 14pt;\n"
 "    font-family: Helvetica;\n"
+"\n"
 "}\n"
-"\n"
-"\n"
+"QTextEdit {\n"
+"      \n"
+"}\n"
 "")
         self.guardar = QPushButton(Dialog)
         self.guardar.setObjectName(u"guardar")
-        self.guardar.setGeometry(QRect(210, 210, 161, 31))
+        self.guardar.setGeometry(QRect(210, 210, 141, 31))
         font = QFont()
         self.guardar.setFont(font)
         self.guardar.setMouseTracking(True)
@@ -54,7 +56,8 @@ class Ui_Dialog(object):
 "    padding: 8px; /* Espaciado interno */\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-color: #A7EDE7;\n"
+"    background-color: #ffffff;\n"
+"    color: black;\n"
 "}\n"
 "QPushButton:hover {\n"
 "   border: 1px solid blue;\n"
@@ -66,7 +69,7 @@ class Ui_Dialog(object):
         self.background.setPixmap(QPixmap(u"../images/background.png"))
         self.cancelar = QPushButton(Dialog)
         self.cancelar.setObjectName(u"cancelar")
-        self.cancelar.setGeometry(QRect(30, 210, 161, 31))
+        self.cancelar.setGeometry(QRect(50, 210, 141, 31))
         self.cancelar.setFont(font)
         self.cancelar.setMouseTracking(True)
         self.cancelar.setStyleSheet(u"QPushButton {\n"
@@ -77,7 +80,8 @@ class Ui_Dialog(object):
 "    padding: 8px; /* Espaciado interno */\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-color: #A7EDE7;\n"
+"    background-color: #ffffff;\n"
+"    color: black;\n"
 "}\n"
 "QPushButton:hover {\n"
 "   border: 1px solid blue;\n"
@@ -92,12 +96,25 @@ class Ui_Dialog(object):
 "    font-size: 20px; /* Tama\u00f1o del texto */\n"
 "    padding: 9px; /* Espaciado interno */\n"
 "}")
+        self.borrar = QPushButton(Dialog)
+        self.borrar.setObjectName(u"borrar")
+        self.borrar.setGeometry(QRect(350, 160, 41, 41))
+        self.borrar.setStyleSheet(u"QPushButton {\n"
+"   \n"
+"    font-size: 14pt; /* Tama\u00f1o del texto */\n"
+"    padding: 8px; /* Espaciado interno */\n"
+"}")
+        icon = QIcon()
+        icon.addFile(u"../images/borrar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.borrar.setIcon(icon)
+        self.borrar.setIconSize(QSize(25, 25))
         self.background.raise_()
         self.cancelar.raise_()
         self.textname_2.raise_()
         self.textname_1.raise_()
         self.inputtext_create_cat.raise_()
         self.guardar.raise_()
+        self.borrar.raise_()
 
         self.retranslateUi(Dialog)
 
@@ -111,5 +128,6 @@ class Ui_Dialog(object):
         self.background.setText("")
         self.cancelar.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
         self.textname_2.setText(QCoreApplication.translate("Dialog", u"de la categor\u00eda :", None))
+        self.borrar.setText("")
     # retranslateUi
 
