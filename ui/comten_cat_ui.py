@@ -17,20 +17,20 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(400, 400)
+        Dialog.resize(400, 398)
         self.label = QLabel(Dialog)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(0, 0, 401, 401))
         self.label.setPixmap(QPixmap(u"../images/background_collection_1.png"))
         self.label_6 = QLabel(Dialog)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(0, 0, 391, 51))
+        self.label_6.setGeometry(QRect(20, 0, 361, 51))
         font = QFont()
         self.label_6.setFont(font)
         self.label_6.setStyleSheet(u"QLabel {\n"
 "   \n"
 "    color: white;\n"
-"    font-size: 20px; /* Tama\u00f1o del texto */\n"
+"    font-size: 19px; /* Tama\u00f1o del texto */\n"
 "    padding: 9px; /* Espaciado interno */\n"
 "}")
         self.label_2 = QLabel(Dialog)
@@ -167,7 +167,7 @@ class Ui_Dialog(object):
 "}")
         self.data_category = QLabel(Dialog)
         self.data_category.setObjectName(u"data_category")
-        self.data_category.setGeometry(QRect(240, 50, 81, 41))
+        self.data_category.setGeometry(QRect(240, 50, 131, 41))
         font1 = QFont()
         font1.setBold(True)
         font1.setWeight(75)

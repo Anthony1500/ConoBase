@@ -1,0 +1,74 @@
+Recordar
+2023-08-23 09:23:39
+
+*********************************************************************************************************
+Estado de arte
+2023-08-23 20:42:52
+
+me centro de articulos los resumenes o resultados
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+problematica
+2023-08-23 19:38:36
+
+esta relacionada con la dependiente
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+estado del arte
+2023-08-23 19:37:55
+
+utilizar la varible independiente
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+escoger
+2023-08-23 19:27:00
+
+hipotesis
+idea a defender
+
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+cuando uso hipotesis y pregunta de investigacion
+2023-08-23 19:14:37
+
+ess del grado o sertesa de relacion de la variables
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+EXCEL
+2023-08-23 18:25:19
+
+El tutor no va poder asistir
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+Enfoque del estudio
+2023-08-23 15:41:47
+
+Un enfoque cualitativo podría ser adecuado si el objetivo es obtener una comprensión profunda y detallada de las estrategias y soluciones existentes para mitigar las vulnerabilidades de inyección SQL en aplicaciones móviles Android. Este enfoque se basa en el análisis sistemático de información subjetiva y permite una interpretación más subjetiva pero lógica y fundamentada de los datos2.
+
+Por otro lado, un enfoque cuantitativo podría ser más adecuado si el objetivo es obtener datos numéricos y medibles sobre la efectividad de las estrategias y soluciones para mitigar las vulnerabilidades de inyección SQL en aplicaciones móviles Android. Este enfoque se basa en el análisis estadístico de datos numéricos y permite obtener resultados objetivos y rigurosos2.
+
+Finalmente, un enfoque mixto combina elementos de los enfoques cualitativo y cuantitativo y puede ser adecuado si el objetivo es obtener una comprensión integral del tema, combinando datos numéricos y subjetivos
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+Tesis vs Monografía
+2023-08-23 09:25:24
+
+La tesis genera conocimientos nuevos
+
+La Monografía recopila y ordena conocimientos ya existentes (no genera conocimientos nuevos)
+
+*********************************************************************************************************

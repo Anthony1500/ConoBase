@@ -1,0 +1,21 @@
+variables de investigación
+2023-08-20 18:24:08
+
+*********************************************************************************************************
+Variables Dependientes:
+2023-08-20 18:26:49
+
+Efectividad de las estrategias de identificación de vulnerabilidad: Esto podría medirse en términos de la precisión y la velocidad de detección.
+Efectividad de las estrategias de mitigación: Puede evaluarse en función de la capacidad para prevenir ataques de inyección SQL y proteger los datos.
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+Variables Independientes
+2023-08-20 18:24:55
+
+Estrategias de identificación de vulnerabilidad de inyección SQL: Podrían ser diferentes enfoques, métodos o técnicas utilizados para detectar la vulnerabilidad.
+
+Estrategias de mitigación de la vulnerabilidad de inyección SQL: Pueden incluir técnicas específicas para prevenir o minimizar el riesgo de inyección SQL.
+
+*********************************************************************************************************

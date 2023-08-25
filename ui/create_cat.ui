@@ -229,6 +229,9 @@ QTextEdit {
    <class>MyTextEdit</class>
    <extends>QTextEdit</extends>
    <header>main</header>
+   <slots>
+    <slot>setupUi()</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources/>
