@@ -157,7 +157,7 @@ class Ui_Dialog(object):
 "}")
         self.label_9 = QLabel(Dialog)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(220, 50, 81, 41))
+        self.label_9.setGeometry(QRect(170, 50, 81, 41))
         self.label_9.setFont(font)
         self.label_9.setStyleSheet(u"QLabel {\n"
 "   \n"
@@ -167,7 +167,7 @@ class Ui_Dialog(object):
 "}")
         self.data_category = QLabel(Dialog)
         self.data_category.setObjectName(u"data_category")
-        self.data_category.setGeometry(QRect(290, 50, 81, 41))
+        self.data_category.setGeometry(QRect(240, 50, 81, 41))
         font1 = QFont()
         font1.setBold(True)
         font1.setWeight(75)
