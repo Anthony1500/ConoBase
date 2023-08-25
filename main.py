@@ -6,7 +6,7 @@ from PyQt5 import QtWidgets, QtCore,uic
 from PyQt5.QtPrintSupport import *
 from PyQt5.uic import *
 from PyQt5 import QtWidgets, uic
-import sys,qdarkstyle
+import sys,qdarkstyle,os
 
 class MainWindow(QtWidgets.QDialog):
     def __init__(self):
@@ -31,11 +31,12 @@ class MainWindow(QtWidgets.QDialog):
         #print("Botón presionado")
         self.stacked_widget.setCurrentIndex(2)  # Cambiar a la página 2 del QStackedWidget
           
-
+    
     
 class CreateCat(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
+        self.stacked_widget = None
         loadUi('ui/create_cat.ui', self)
         
         # Conectar la señal clicked del botón a un método, myButton es la variable asociada al botón
@@ -80,6 +81,8 @@ class CreateCat(QtWidgets.QDialog):
         #print("Botón presionado")
         self.stacked_widget.setCurrentIndex(0)  # Cambiar a la página 0 del QStackedWidget
 
+    
+
 class ListCat(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
@@ -88,7 +91,35 @@ class ListCat(QtWidgets.QDialog):
         # Conectar la señal clicked del botón a un método, myButton es la variable asociada al botón
         self.back.clicked.connect(self.button_clicked)
         
+              
 
+        # Ruta del directorio que contiene los archivos de texto
+        directorio = 'resources'
+
+        # Obtén la lista de archivos de texto en el directorio
+        archivos_txt = [archivo.name for archivo in os.scandir(directorio) if archivo.is_file() and archivo.name.endswith('.txt')]
+
+
+        # Leer cada archivo de texto y obtener el contenido en una lista de cadenas
+        lineas = []
+        for archivo_txt in archivos_txt:
+            ruta_archivo = os.path.join(directorio, archivo_txt)
+            with open(ruta_archivo, "r") as archivo:
+                lineas.extend(archivo.readlines())
+
+        # Crea un modelo de datos y establece los datos
+        model = QStringListModel()
+        model.setStringList(lineas)
+
+        # Establece el modelo en el QListView
+        self.lista_cat.setModel(model)   
+
+
+        # Conecta la señal currentChanged del QStackedWidget a la función actualizar_lista
+        stacked_widget.currentChanged.connect(self.actualizar_lista)
+
+
+    
         #animacion
         self.animation = QtCore.QPropertyAnimation(self.back, b"geometry")
         self.animation.setDuration(500)
@@ -100,7 +131,24 @@ class ListCat(QtWidgets.QDialog):
         self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuad)
         self.animation.finished.connect(self.stop_animation)
 
-           
+    def actualizar_lista(self):
+        # Obtén la lista de archivos de texto en el directorio
+        directorio = 'resources'
+        archivos_txt = [archivo for archivo in os.listdir(directorio) if archivo.endswith('.txt')]
+
+         # Leer cada archivo de texto y obtener el contenido en una lista de cadenas
+        lineas = []
+        for archivo_txt in archivos_txt:
+            ruta_archivo = os.path.join(directorio, archivo_txt)
+            with open(ruta_archivo, "r") as archivo:
+                lineas.extend(archivo.readlines())
+
+        # Crea un modelo de datos y establece los datos
+        model = QStringListModel()
+        model.setStringList(lineas)
+
+        # Establece el modelo en el QListView
+        self.lista_cat.setModel(model)
         
     def stop_animation(self):
         # Detener la animación y volver a la posición original
@@ -111,6 +159,9 @@ class ListCat(QtWidgets.QDialog):
         # Manejar el evento de clic del botón
         #print("Botón presionado")
         self.stacked_widget.setCurrentIndex(0)  # Cambiar a la página 0 del QStackedWidget
+
+         
+        
 
 
 if __name__ == "__main__":
@@ -128,6 +179,8 @@ if __name__ == "__main__":
     main_window.stacked_widget = stacked_widget
     create_cat_window.stacked_widget = stacked_widget
     search_cat_window.stacked_widget = stacked_widget
+
+   
 
 
     stacked_widget.setCurrentIndex(0)  # Mostrar la página 0 inicialmente
