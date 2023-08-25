@@ -12,6 +12,8 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
+from main import MyTextEdit
+
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -27,21 +29,6 @@ class Ui_Dialog(object):
 "    font-size: 20px; /* Tama\u00f1o del texto */\n"
 "    padding: 9px; /* Espaciado interno */\n"
 "}")
-        self.inputtext_create_cat = QTextEdit(Dialog)
-        self.inputtext_create_cat.setObjectName(u"inputtext_create_cat")
-        self.inputtext_create_cat.setGeometry(QRect(30, 160, 321, 41))
-        self.inputtext_create_cat.setStyleSheet(u"QTextEdit:hover {\n"
-"    border: 2px solid blue;\n"
-"}\n"
-"QTextEdit {\n"
-"    font-size: 14pt;\n"
-"    font-family: Helvetica;\n"
-"\n"
-"}\n"
-"QTextEdit {\n"
-"      \n"
-"}\n"
-"")
         self.guardar = QPushButton(Dialog)
         self.guardar.setObjectName(u"guardar")
         self.guardar.setGeometry(QRect(210, 210, 141, 31))
@@ -108,13 +95,41 @@ class Ui_Dialog(object):
         icon.addFile(u"../images/borrar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.borrar.setIcon(icon)
         self.borrar.setIconSize(QSize(25, 25))
+        self.inputtext_create_cat = MyTextEdit(Dialog)
+        self.inputtext_create_cat.setObjectName(u"inputtext_create_cat")
+        self.inputtext_create_cat.setGeometry(QRect(30, 160, 321, 41))
+        self.inputtext_create_cat.setStyleSheet(u"QTextEdit {\n"
+"    font-size: 14pt;\n"
+"    font-family: Helvetica;\n"
+"}\n"
+"\n"
+"QTextEdit:hover {\n"
+"    border: 1px solid blue;\n"
+"    border-radius: 9px;\n"
+"    margin-bottom: 0px;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"                border-radius: 10px;\n"
+"                background-clip: border;\n"
+"                background-color: rgb(220, 220,220);\n"
+"                color: rgb(0, 0, 0);\n"
+"                font: 13pt Vazir;\n"
+"                border:0.5px solid;\n"
+"                border-color: rgb(220, 220,220);\n"
+"                font-family: Helvetica;\n"
+"                font-size: 14pt;\n"
+"            }\n"
+"\n"
+"")
+        self.inputtext_create_cat.setAcceptRichText(True)
         self.background.raise_()
         self.cancelar.raise_()
         self.textname_2.raise_()
         self.textname_1.raise_()
-        self.inputtext_create_cat.raise_()
         self.guardar.raise_()
         self.borrar.raise_()
+        self.inputtext_create_cat.raise_()
 
         self.retranslateUi(Dialog)
 

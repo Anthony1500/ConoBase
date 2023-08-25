@@ -34,30 +34,6 @@
     <string>Ingresa el nombre</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="inputtext_create_cat">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>160</y>
-     <width>321</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QTextEdit:hover {
-    border: 2px solid blue;
-}
-QTextEdit {
-    font-size: 14pt;
-    font-family: Helvetica;
-
-}
-QTextEdit {
-      
-}
-</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="guardar">
    <property name="geometry">
     <rect>
@@ -201,14 +177,60 @@ QPushButton:hover {
     </size>
    </property>
   </widget>
+  <widget class="MyTextEdit" name="inputtext_create_cat">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>160</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit {
+    font-size: 14pt;
+    font-family: Helvetica;
+}
+
+QTextEdit:hover {
+    border: 1px solid blue;
+    border-radius: 9px;
+    margin-bottom: 0px;
+}
+
+QTextEdit {
+                border-radius: 10px;
+                background-clip: border;
+                background-color: rgb(220, 220,220);
+                color: rgb(0, 0, 0);
+                font: 13pt Vazir;
+                border:0.5px solid;
+                border-color: rgb(220, 220,220);
+                font-family: Helvetica;
+                font-size: 14pt;
+            }
+
+</string>
+   </property>
+   <property name="acceptRichText">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>cancelar</zorder>
   <zorder>textname_2</zorder>
   <zorder>textname_1</zorder>
-  <zorder>inputtext_create_cat</zorder>
   <zorder>guardar</zorder>
   <zorder>borrar</zorder>
+  <zorder>inputtext_create_cat</zorder>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>main</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
