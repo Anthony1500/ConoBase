@@ -1,0 +1,56 @@
+ANÁLISIS FORENSE Y DELITOS INF
+2023-09-24 10:56:35
+
+*********************************************************************************************************
+Laboratorio 2.1
+2023-09-30 16:04:59
+
+Mmls cf.dd 
+Ls -la 
+Mkdir datos 
+Mkdir datos/outs 
+Mkdir datos/recovery 
+Ls  -lah 
+mmls cf.dd > datos/outs/out_mmls.txt 
+more  datos/outs/out_mmls.txt 
+sudo mount -t vfat -o ro,noatime,noexec,loop,offset=16384 cf.dd /home/caine/disco 
+losetup -l 
+bc 
+32*512 
+Mount 
+Date ; mount 
+Date ; losetup -l 
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+Laboratorio 2
+2023-09-30 14:28:29
+
+sudo fdisk -l
+sudo fdisk -l | more
+sudo fdisk -l /dev/sdc
+sudo fdisk -l /dev/sda
+sudo fdisk -l /dev/sda > sda.txt
+more sda.txt
+------------------------
+sudo mmls /dev/sda
+sudo fdisk -l /dev/sda1
+sudo man fls -l /dev/sdb1
+mount
+mount  | grep sdb
+mount  | grep sdb1
+
+
+*********************************************************************************************************
+*********************************************************************************************************
+CADENA DE CUSTODIA
+2023-09-30 08:51:12
+
+1.RECOLECCION DE INFORMACION EN LUGAR DE HECHIS
+ENVALAGE
+TRANSPOTE
+
+IDENTIFICACION DE LOS RESPONSABLES
+
+*********************************************************************************************************

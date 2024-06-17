@@ -1,14 +1,25 @@
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import* 
-from PyQt5.QtGui import*
-from PyQt5 import QtGui
-from PyQt5 import QtWidgets, QtCore,uic
-from PyQt5.QtPrintSupport import *
-from PyQt5.uic import *
-from PyQt5 import QtWidgets, uic
-import sys,qdarkstyle,os,re,time
+import sys
+import os
+import re
+import time
 from datetime import datetime
-from PyQt5.QtWidgets import QStyledItemDelegate
+
+from PyQt5 import QtWidgets, QtCore, QtGui, QtPrintSupport, uic
+from PyQt5.QtWidgets import (
+    QApplication, QMainWindow, QStyledItemDelegate, QVBoxLayout, QPushButton, QLabel, QDialog,QStackedWidget,QStyle,QHBoxLayout,QStyleFactory,QMessageBox
+)
+from PyQt5.QtCore import (
+    Qt, QTimer, QDate, QDateTime, QStringListModel,QSortFilterProxyModel,QRect,QEvent,QSize
+)
+from PyQt5.QtGui import (
+    QIcon, QFont, QStandardItemModel, QStandardItem, QColor,QPen
+)
+from PyQt5.QtPrintSupport import (
+    QPrinter, QPrintDialog
+)
+from PyQt5.uic import loadUi
+import qdarkstyle
+
 
 directorio = 'recursos'
 archivos_txt = [os.path.splitext(archivo)[0] for archivo in os.listdir(directorio) if archivo.endswith('.txt')]
@@ -17,8 +28,6 @@ nombres = [nombre.split("_")[1] for nombre in archivos_txt]
 def get_current_date_time():
     now = datetime.now()    
     return now.strftime("%Y-%m-%d %H:%M:%S")  
-
-# Format the date and time
 
 
 class MainWindow(QtWidgets.QDialog):
@@ -527,7 +536,70 @@ class ListsubCat(QtWidgets.QDialog):
                     model.appendRow(item)
 
             
-     
+class CustomDialog(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        # Establecer el tamaño fijo de la ventana
+        self.setFixedSize(500, 100)  # 500 -alto  y 400 -ancho.
+        
+        # Quitar el signo de interrogación
+        self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
+
+        self.setStyleSheet("""
+            QDialog { 
+                background-color: #f5f5f5; 
+                font-family: 'Roboto', sans-serif;
+            }
+            QPushButton {
+                border: 1px solid #8f8f91;
+                border-radius: 4px;
+                background-color: #f1f1f2;
+                min-width: 80px;
+                padding: 5px;
+            }
+            QPushButton:hover {
+                border: 1px solid #5e5e5e;
+                background-color: #e7e7e8;
+            }
+            QPushButton:pressed {
+                background-color: #d7d7d8;
+            }
+            
+        """)  # Estilos CSS para el diálogo y los botones
+
+        self.layout = QVBoxLayout()
+        self.layout.setContentsMargins(20, 20, 20, 20)  # Márgenes
+
+        self.label = QLabel("Etiqueta del diálogo")
+        self.label.setFont(QFont("Roboto", 10))  # Fuente moderna
+        self.label.setWordWrap(True)  # Habilitar el ajuste de línea
+        self.label.adjustSize()  # Ajustar el tamaño al contenido
+        
+        self.button_layout = QHBoxLayout()
+        self.button_layout.setSpacing(8)  # Espaciado entre botones
+        self.yes_button = QPushButton("Sí")
+        self.yes_button.setStyleSheet("QPushButton { background-color: #D3D3D3; color: #000000; border-radius: 5px; } QPushButton:hover { background-color: #66BB6A; color: #FFFFFF; }")  # Botón de acción con fondo verde y texto blanco, con sombra
+        self.yes_button.setFixedWidth(80)      
+        self.no_button = QPushButton("No")
+        self.no_button.setStyleSheet("QPushButton { background-color: #D3D3D3; color: #000000; border-radius: 5px; } QPushButton:hover { background-color: #e18484; color: #FFFFFF; }")  # Botón secundario con fondo gris 
+        self.no_button.setFixedWidth(80)
+        
+        self.button_layout.addWidget(self.yes_button)
+        self.button_layout.addWidget(self.no_button)
+        self.yes_button.clicked.connect(self.accept)
+        self.no_button.clicked.connect(self.reject)
+             
+        self.layout.addWidget(self.label)
+        self.layout.addLayout(self.button_layout)
+        self.setLayout(self.layout)
+
+        self.setStyle(QStyleFactory.create('Fusion'))  # Estilo moderno
+
+    def question(self, title, question):
+        self.setWindowTitle(title)
+        self.label.setText(question)
+        return self.exec_()
+
 
 class CustomItemDelegate(QStyledItemDelegate):    
     def __init__(self, stacked_widget,my_object2,my_object3, *args, **kwargs):
@@ -543,17 +615,21 @@ class CustomItemDelegate(QStyledItemDelegate):
     def editorEvent(self, event, model, option, index):
        # Obtener el nombre del archivo a eliminar
        respuesta = None
+       # Crear una instancia de QMessageBox
+       messagebox = CustomDialog(self.parent())
        nombre_archivo = model.data(index, Qt.DisplayRole).split('\n')[0]      
        if event.type() == QEvent.MouseButtonRelease:
             if self.button_rect_trash.contains(event.pos()):     
             
+               # Configurar el icono antes de mostrar el cuadro de diálogo
+               messagebox.setWindowIcon(QIcon('images/trash.png'))
+            
+               # Mostrar un cuadro de diálogo preguntando al usuario si desea eliminar el archivo               
+               respuesta = messagebox.question("Eliminar archivo", f"¿Estás seguro de que deseas eliminar la categoría: <b>{nombre_archivo}</b> con sus entradas?")
                
-            
-               # Mostrar un cuadro de diálogo preguntando al usuario si desea eliminar el archivo
-               respuesta = QMessageBox.question(self.parent(), "Eliminar archivo", f"¿Estás seguro de que deseas eliminar la categoría: <b>{nombre_archivo}</b> con sus entradas?")
-            
-            # Si el usuario acepta, eliminar el archivo
-            if respuesta == QMessageBox.Yes:
+                             
+               # Si el usuario acepta, eliminar el archivo
+            if respuesta == QDialog.Accepted:
                 # Construir la ruta del archivo
                 directorio = 'recursos'
                 ruta_archivo = os.path.join(directorio, "cat_"+nombre_archivo+".txt")
@@ -694,9 +770,7 @@ class CustomItemDelegate(QStyledItemDelegate):
         size.setWidth(size.width() + 20) 
         return size
 
-    def handle_button_click(self):
-        print("hola")
-
+    
     def paint(self, painter, option, index):
         option.rect.adjust(8, 1, 0, 0)
         painter.save()
@@ -769,9 +843,12 @@ class CustomItemDelegate(QStyledItemDelegate):
         self.icon1.paint(painter, iconRect1, QtCore.Qt.AlignCenter)       
         painter.drawPixmap(self.button_rect_trash, self.icon.pixmap(button_size_trash))
         painter.drawPixmap(self.button_rect_right, self.icon2.pixmap(button_size_right))
-        # Dibuja el texto del elemento
-       
-        painter.drawText(option.rect, Qt.AlignLeft, index.data())
+        
+        # Define el rectángulo dentro del cual se dibujará el texto
+        textRect = QtCore.QRect(option.rect.left(), option.rect.top(), option.rect.width() -50, option.rect.height())
+        
+        # Dibuja el texto dentro del rectángulo
+        painter.drawText(textRect, Qt.AlignLeft, index.data())
 
         painter.restore()
 
