@@ -59,10 +59,11 @@ consultar las existentes y gestionar subcategorías.
 
 ## Estructura del proyecto
 
+```plaintext
 ConoBase/
 ├── main.py                      # Archivo principal con la lógica de la interfaz (1400+ líneas).
-├── ui/                          # Formularios de Qt (.ui) y  generadas en QT Designer.
+├── ui/                          # Formularios de Qt (.ui) generados en Qt Designer.
 ├── requirements.txt             # Lista de dependencias del proyecto.
 ├── images/                      # Iconos e imágenes utilizados en la GUI (incluye logo_app.png).
 └── recursos/                    # Archivos de texto donde se guardan las categorías.
-
+```
