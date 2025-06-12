@@ -1,1 +1,29 @@
+# Entorno virtual
+.venv/
+
+# Cachés de Python
+__pycache__
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos temporales de distribución (builds, cx_Freeze, PyInstaller, distutils)
+dist/
+build/
+*.spec
 /.dist
+
+# Archivos de logs
+*.log
+
+# Archivos del editor
+.vscode/
+/.vscode
+
+
+# Otros posibles archivos temporales
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db

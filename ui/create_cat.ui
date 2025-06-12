@@ -150,33 +150,17 @@ QPushButton:hover {
   <widget class="QPushButton" name="borrar">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>350</x>
      <y>160</y>
      <width>41</width>
      <height>41</height>
     </rect>
    </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton:hover {    
-    border-radius: 9px;
-    margin-bottom: 0px;
-}
-
-QPushButton {
+    <string notr="true">QPushButton {
    
-       border-radius: 10px;
-                background-clip: border;
-               
-                color: rgb(0, 0, 0);
-                font: 13pt Vazir;
-               
-              
-                font-family: Helvetica;
-                font-size: 14pt;
-  
+    font-size: 14pt; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
 }</string>
    </property>
    <property name="text">
@@ -198,7 +182,7 @@ QPushButton {
     <rect>
      <x>30</x>
      <y>160</y>
-     <width>331</width>
+     <width>321</width>
      <height>41</height>
     </rect>
    </property>
@@ -237,8 +221,8 @@ QTextEdit {
   <zorder>textname_2</zorder>
   <zorder>textname_1</zorder>
   <zorder>guardar</zorder>
-  <zorder>inputtext_create_cat</zorder>
   <zorder>borrar</zorder>
+  <zorder>inputtext_create_cat</zorder>
  </widget>
  <customwidgets>
   <customwidget>
