@@ -67,3 +67,11 @@ ConoBase/
 ├── images/                      # Iconos e imágenes utilizados en la GUI (incluye logo_app.png).
 └── recursos/                    # Archivos de texto donde se guardan las categorías.
 ```
+## Autor
+
+Este proyecto ha sido desarrollado por:
+
+**Anthony Arteaga**  
+
+- GitHub: [https://github.com/Anthony1500](https://github.com/Anthony1500)  
+- LinkedIn: [https://www.linkedin.com/in/anthony-arteaga-5b4393152](https://www.linkedin.com/in/anthony-arteaga-5b4393152)
